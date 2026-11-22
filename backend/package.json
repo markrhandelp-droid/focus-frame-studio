@@ -1,0 +1,25 @@
+{
+  "name": "focus-frame-backend",
+  "version": "2.0.0",
+  "description": "Focus Frame Studio REST API — Node.js, Express 5 and MySQL",
+  "main": "server.js",
+  "type": "commonjs",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node --watch server.js",
+    "db:setup": "node scripts/setup-db.js",
+    "db:reset": "node scripts/setup-db.js --reset",
+    "test": "node --test tests/api.test.js"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "license": "ISC",
+  "dependencies": {
+    "cors": "^2.8.6",
+    "dotenv": "^18.0.3",
+    "express": "^5.2.1",
+    "firebase-admin": "^14.5.0",
+    "mysql2": "^3.14.1"
+  }
+}

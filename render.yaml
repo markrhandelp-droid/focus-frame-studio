@@ -1,0 +1,35 @@
+# Render Blueprint for the API (optional — you can also create the Web
+# Service by hand in the dashboard with the same settings).
+services:
+  - type: web
+    name: focus-frame-api
+    runtime: node
+    rootDir: backend
+    buildCommand: npm ci
+    startCommand: npm start
+    healthCheckPath: /api/health
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: CLIENT_ORIGIN
+        sync: false        # e.g. https://focus-frame.netlify.app
+      - key: ADMIN_EMAILS
+        sync: false
+      - key: FIREBASE_PROJECT_ID
+        value: focus-frame-studio
+      - key: DB_HOST
+        sync: false
+      - key: DB_PORT
+        sync: false
+      - key: DB_USER
+        sync: false
+      - key: DB_PASSWORD
+        sync: false
+      - key: DB_NAME
+        sync: false
+      - key: DB_SSL
+        value: "true"
+      - key: DB_SSL_CA
+        sync: false        # paste the CA certificate text (Aiven)
+      - key: DB_TIMEZONE
+        value: "+08:00"
